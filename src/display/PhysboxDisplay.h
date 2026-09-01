@@ -12,6 +12,10 @@ class PhysboxDisplay final : public Adafruit_GFX {
   void endWrite() override;
   void drawPixel(int16_t x, int16_t y, uint16_t color) override;
   void writePixel(int16_t x, int16_t y, uint16_t color) override;
+  void writeFastVLine(int16_t x, int16_t y, int16_t height,
+                      uint16_t color) override;
+  void writeFastHLine(int16_t x, int16_t y, int16_t width,
+                      uint16_t color) override;
   void fillRect(int16_t x, int16_t y, int16_t width, int16_t height,
                 uint16_t color) override;
   void writeFillRect(int16_t x, int16_t y, int16_t width, int16_t height,

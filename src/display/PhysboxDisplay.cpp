@@ -121,6 +121,19 @@ void PhysboxDisplay::writePixel(int16_t x, int16_t y, uint16_t color) {
   sendColor(color);
 }
 
+void PhysboxDisplay::writeFastVLine(int16_t x, int16_t y, int16_t height,
+                                    uint16_t color) {
+  // Adafruit_GFX calls write* methods with an SPI transaction already open.
+  // Route directly to the transaction-safe primitive to avoid re-entering
+  // startWrite() through the base implementation.
+  writeFillRect(x, y, 1, height, color);
+}
+
+void PhysboxDisplay::writeFastHLine(int16_t x, int16_t y, int16_t width,
+                                    uint16_t color) {
+  writeFillRect(x, y, width, 1, color);
+}
+
 void PhysboxDisplay::fillRect(int16_t x, int16_t y, int16_t width,
                               int16_t height, uint16_t color) {
   startWrite();
