@@ -1,0 +1,21 @@
+.pio/
+.vscode/
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary / generated
+*.tmp
+*.log
+*.bak
+*.bin
+*.elf
+*.map
+
+# Python/tool caches
+__pycache__/
+*.pyc
